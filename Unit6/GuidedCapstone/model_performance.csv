@@ -1,0 +1,27 @@
+,Coefficient/Value
+AdultWeekday,19.8417
+summit_elev,4.6522
+triple,1.3775
+quad,1.0745
+vertical_drop,1.0221
+fastQuads,0.9789
+NightSkiing_ac,0.7066
+daysOpenLastYear,0.6067
+Snow Making_ac,0.5959
+total_chairs,0.573
+SkiableTerrain_ac,0.4339
+fastSixes,0.2802
+yearsOpen,0.2769
+fastEight,0.2245
+double,0.1998
+TerrainParks,0.1475
+trams,-0.1271
+projectedDaysOpen,-0.1913
+LongestRun_mi,-0.5233
+averageSnowfall,-1.0819
+surface,-1.4353
+Runs,-1.9296
+clusters,-5.9697
+explained variance,0.9348
+Mean Absolute Error,5.1261
+Intercept,64.0951
