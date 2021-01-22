@@ -53,7 +53,7 @@ Models as k-nearest neighbor (KNN), random forest (RAF), logistic regression (LG
 
 ![Table 2](https://github.com/jiaqixu/Springboard/blob/master/Capstone/Capstone1/Figure/Table2.png)
 
-*Results for Machine Learning*
+### Results for Machine Learning
 
 Train and test result for machine learning models is
 
