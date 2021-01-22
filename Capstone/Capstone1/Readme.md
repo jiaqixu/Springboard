@@ -29,16 +29,16 @@ Data Split
 out-of-sample trading window to 250 days (approximately one year).
 2. Move the formation-trading set forward by 250 days in a sliding-window approach, resulting in 12 non-overlapping trading batches in following table
 
-.. figure:: ![Table 1](https://github.com/jiaqixu/Springboard/blob/master/Capstone/Capstone1/Figure/Table1.png)
+![Table 1](https://github.com/jiaqixu/Springboard/blob/master/Capstone/Capstone1/Figure/Table1.png)
 
 Feature generation 
 ------------------
 1. Input: 
-Let $P^s={{(P}_t^s)}_{t\in T}$ denote the price process of stock s or financial indicator, with $s\in{1,...,n}$. Define the simple return $R_{t,m}^s$ for each stock or indicator over m periods as 
-$R_{t,m}^s=\frac{P_t^s}{P_{t-m}^s}-1$
+Let <a href="https://www.codecogs.com/eqnedit.php?latex=P^s={{(P}_t^s)}_{t\in&space;T}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?P^s={{(P}_t^s)}_{t\in&space;T}" title="P^s={{(P}_t^s)}_{t\in T}" /></a> denote the price process of stock s or financial indicator, with <a href="https://www.codecogs.com/eqnedit.php?latex=s\in\{1,...,n\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?s\in\{1,...,n\}" title="s\in\{1,...,n\}" /></a>. Define the simple return <a href="https://www.codecogs.com/eqnedit.php?latex=R_{t,m}^s" target="_blank"><img src="https://latex.codecogs.com/gif.latex?R_{t,m}^s" title="R_{t,m}^s" /></a> for each stock or indicator over m periods as 
+<a href="https://www.codecogs.com/eqnedit.php?latex=R_{t,m}^s=\frac{P_t^s}{P_{t-m}^s}-1" target="_blank"><img src="https://latex.codecogs.com/gif.latex?R_{t,m}^s=\frac{P_t^s}{P_{t-m}^s}-1" title="R_{t,m}^s=\frac{P_t^s}{P_{t-m}^s}-1" /></a>
 
-Where $m\in\{{1,\ldots,20}\cup{40,60,\ldots,240}\}$
-The notation of features is $f_m$, m is defined as above which represents returns of different lags of days.
+Where <a href="https://www.codecogs.com/eqnedit.php?latex=m\in\{{1,\ldots,20}\cup{40,60,\ldots,240}\}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?m\in\{{1,\ldots,20}\cup{40,60,\ldots,240}\}" title="m\in\{{1,\ldots,20}\cup{40,60,\ldots,240}\}" /></a>
+The notation of features is <a href="https://www.codecogs.com/eqnedit.php?latex=f_m" target="_blank"><img src="https://latex.codecogs.com/gif.latex?f_m" title="f_m" /></a>, m is defined as above which represents returns of different lags of days.
 
 2. Output: 
-Construct a binary response variable $Y_{t+j,j}^s\in{0,1}$ for each stock s. The response $Y_{t+j,j}^s$ equals to one (class 1), if the j-period return $R_{t+j,j}^s$ of stock s is larger than the corresponding cross-sectional median return computed over all stocks and zero otherwise (class 0). Here we can try different $j(s)$. For example, if $j=1$ it means one-period return prediction. We try to forecast probability $\mathcal{P}_{t+j}^s$ for each stock s to outperform the cross-sectional median in period t+j. Please note the binary response also can be extended to multinomial response in the future work.
+Construct a binary response variable <a href="https://www.codecogs.com/eqnedit.php?latex=Y_{t&plus;j,j}^s\in{0,1}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Y_{t&plus;j,j}^s\in{0,1}" title="Y_{t+j,j}^s\in{0,1}" /></a> for each stock s. The response <a href="https://www.codecogs.com/eqnedit.php?latex=Y_{t&plus;j,j}^s" target="_blank"><img src="https://latex.codecogs.com/gif.latex?Y_{t&plus;j,j}^s" title="Y_{t+j,j}^s" /></a> equals to one (class 1), if the j-period return <a href="https://www.codecogs.com/eqnedit.php?latex=R_{t&plus;j,j}^s" target="_blank"><img src="https://latex.codecogs.com/gif.latex?R_{t&plus;j,j}^s" title="R_{t+j,j}^s" /></a> of stock s is larger than the corresponding cross-sectional median return computed over all stocks and zero otherwise (class 0). Here we can try different <a href="https://www.codecogs.com/eqnedit.php?latex=j(s)" target="_blank"><img src="https://latex.codecogs.com/gif.latex?j(s)" title="j(s)" /></a>. For example, if <a href="https://www.codecogs.com/eqnedit.php?latex=j=1" target="_blank"><img src="https://latex.codecogs.com/gif.latex?j=1" title="j=1" /></a> it means one-period return prediction. We try to forecast probability <a href="https://www.codecogs.com/eqnedit.php?latex=\mathcal{P}_{t&plus;j}^s" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\mathcal{P}_{t&plus;j}^s" title="\mathcal{P}_{t+j}^s" /></a> for each stock s to outperform the cross-sectional median in period t+j. Please note the binary response also can be extended to multinomial response in the future work.
